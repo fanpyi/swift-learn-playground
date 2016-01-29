@@ -19,6 +19,3 @@ let view = UIView()
 view.className
 view.reuseIdentifier
 
- let param = [1,4,6,7,8,9]
-param.description
-
