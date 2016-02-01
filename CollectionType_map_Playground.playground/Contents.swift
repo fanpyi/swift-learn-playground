@@ -2,13 +2,19 @@
 
 import UIKit
 let arr = [1,2,3,4,5,6]
-var doubled = arr.map({
-    $0 * 2
-})
-
 arr.map { (x: Int) -> Int in
     x * 2
 }
+arr.map { (x:Int) -> Int in
+    x*3+2
+}
+arr.map({
+    $0 * 2
+})
+arr.map {
+    $0 * 3 + 2
+}
+
 
 func doubleArrayByTwo(xs: [Int]) ->([Int],String) {
     let s = "\(__FUNCTION__)"
@@ -75,3 +81,27 @@ genericComputeArray(arr) {
 genericComputeArray(arr) {
     $0 % 2 == 0 ? "偶数" : "奇数"
 }
+
+
+let testArray = ["a","time","","is","freedom","one"]
+testArray.filter {
+    return $0.characters.count > 0
+}
+
+testArray.map { (s: String) -> Int? in
+    if s.characters.count > 0 {
+        return s.characters.count
+    }else{
+        return nil
+    }
+}
+testArray.flatMap({ (s:String) -> Int? in
+    if s.characters.count > 0 {
+        return s.characters.count
+    }else{
+        return nil
+    }
+})
+
+
+

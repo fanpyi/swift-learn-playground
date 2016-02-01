@@ -18,4 +18,5 @@ aString.characters.reduce("") { (ret:String, c: Character) -> String in
 aString.characters.reduce("") {
     "\($1)" + $0
 }
-
+var list = aString.characters.split {$0 == " "}.map({$0})
+list
