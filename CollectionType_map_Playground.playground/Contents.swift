@@ -85,7 +85,7 @@ genericComputeArray(arr) {
 
 let testArray = ["a","time","","is","freedom","one"]
 testArray.filter {
-    return $0.characters.count > 0
+    return $0.characters.count > 3
 }
 
 testArray.map { (s: String) -> Int? in

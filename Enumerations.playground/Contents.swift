@@ -7,6 +7,7 @@ enum CompassPoint:String{
     case East
     case West
 }
+
 var direction = CompassPoint.East
 
 if let dr = CompassPoint(rawValue: "East") {

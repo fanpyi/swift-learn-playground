@@ -34,6 +34,7 @@ let library = [
     Song(name: "The One And Only", artist: "Chesney Hawkes"),
     Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
 ]
+
 var movieCount = 0
 var songCount = 0
 for item in library {
@@ -43,6 +44,16 @@ for item in library {
         songCount++
     }
 }
+let movieList = library.filter {
+    $0 is Movie
+}
+let songList = library.filter {
+    $0 is Song
+}
+movieList
+songList
+
+
 movieCount
 songCount
 
