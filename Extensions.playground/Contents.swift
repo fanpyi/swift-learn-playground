@@ -77,10 +77,9 @@ class BankCard: Equatable{
     init(number: Int64) {
         self.number = number
     }
-    func ==(lhs: BankCard, rhs: BankCard) -> Bool {
-        return lhs.number == rhs.number
-    }
-    
+}
+func ==(lhs: BankCard, rhs: BankCard) -> Bool {
+    return lhs.number == rhs.number
 }
 
 
