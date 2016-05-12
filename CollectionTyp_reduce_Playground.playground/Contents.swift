@@ -71,3 +71,24 @@ rmap([1,2,3,4]) {
         return a
     }
 }
+
+extension SequenceType {
+    func myReduce<T>(initial: T, @noescape combine: (T, Self.Generator.Element)  -> T) -> T {
+        var result = initial
+        for item in self {
+            result = combine(result, item)
+        }
+        return result
+    }
+}
+let a = [1,3,5,2,4,6]
+let sb = a.myReduce([]) { [$1] + $0 }
+sb
+let sc = a.myReduce([]) {  $0 + [$1]}
+sc
+
+let sd = a.myReduce(0, combine: max)
+
+let se = a.myReduce(Int.max, combine: min)
+
+let sf = a.myReduce(0, combine: +)
